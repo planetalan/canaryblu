@@ -31,7 +31,9 @@ class MarketdataController extends Zend_Controller_Action
 
         //make each entry its own array value
         $line = explode("\n", $content);
-
+        $json = file_get_contents(getenv("VCAP_SERVICES"),0,null,null);
+        $json_output = json_decode($json);
+        echo $json_output;
         echo count($line). " records<BR><BR>";
         //check the db table for newest datestamp
         $db = new Application_Model_DbTable_Marketdata();
