@@ -1,0 +1,24 @@
+<?php
+$this->title = "Market Data";
+$this->headTitle($this->title);
+?>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Currency</th>
+        <th>Exchange</th>
+
+    </tr>
+    <?php foreach($this->marketdataset as $marketdataset) : ?>
+    <tr>
+        <td><?php echo $this->escape($marketdataset->date);?></td>
+        <td><?php echo $this->escape($marketdataset->price);?></td>
+        <td><?php echo $this->escape($marketdataset->quantity);?></td>
+        <td><?php echo $this->escape($marketdataset->currency);?></td>
+        <td><?php echo $this->escape($marketdataset->exchange);?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
